@@ -10,6 +10,8 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
+    "resolveJsonModule": true, // required for json module
+    "esModuleInterop": true,  // required for json module
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",

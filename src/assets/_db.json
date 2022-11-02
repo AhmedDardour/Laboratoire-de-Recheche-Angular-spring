@@ -1,0 +1,54 @@
+{
+    "members": [
+        {
+            "id":"1234560",
+            "cin":"081537",
+            "name":"ahmed",
+            "createdDate":"20/09/2022",
+            "cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+            "type":"student"
+      
+        },
+    
+          {
+            "id":"123560",
+            "cin":"0815307",
+            "name":"ahmed2",
+            "createdDate":"20/09/2022",
+            "cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+            "type":"student"
+          },
+          {
+            "id":"123450",
+            "cin":"0815370",
+            "name":"Dhiaa",
+            "createdDate":"20/09/2022",
+            "cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+            "type":"student"
+            
+          }
+    ],
+
+
+
+  "article":[
+    {
+      "idArticle":"123",
+      "title":"iphone",
+      "Annee":"2015",
+      "Auteur":"ahmed"
+    },
+    {
+      "idArticle":"122",
+      "title":"iphone",
+      "Annee":"2015",
+      "Auteur":""
+    },
+    {
+      "idArticle":"124",
+      "title":"iphone",
+      "Annee":"2015",
+      "Auteur":""
+    }
+  ]
+}
