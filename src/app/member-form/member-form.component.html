@@ -1,16 +1,33 @@
-<form [formGroup]="form" (ngSubmit)="ONSUB()">
+<section class="parent"  >
+
+<label> Create New Member</label>
+
+<form [formGroup]="form" class="formparent"  (ngSubmit)="ONSUB()">
 
     <p>
         <mat-form-field appearance="legacy">     
-          <input matInput placeholder="cin" formControlName="cin">
+          <input matInput placeholder="cin" formControlName="cin" required>
         </mat-form-field>
     </p>
 
     <p>
         <mat-form-field appearance="legacy">     
-          <input matInput placeholder="name" formControlName="name">
+          <input matInput placeholder="nom" formControlName="nom">
         </mat-form-field>
     </p>
+
+    <p>
+      <mat-form-field appearance="legacy">     
+        <input matInput placeholder="prenom" formControlName="prenom">
+      </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="legacy">     
+      <input matInput placeholder="email" formControlName="email" type="email">
+    </mat-form-field>
+</p>
+
 
     <p>
         <mat-form-field appearance="legacy">     
@@ -19,13 +36,19 @@
     </p>
 
     <p>
-        <mat-form-field appearance="legacy">     
-          <input matInput placeholder="type" formControlName="type">
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="type">
+          <mat-option value="STUDENT">Student</mat-option>
+          <mat-option value="TEACHER">Teacher</mat-option>
+        </mat-select>
+      </mat-form-field>
     </p>
 
-        <button type="submit"></button>
-    
-
+    <button mat-raised-button color="primary" type="submit"
+    [disabled]="!form.valid"
+    >Create</button>
 
 </form>
+
+</section>

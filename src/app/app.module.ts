@@ -10,6 +10,7 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatButtonModule} from '@angular/material/button';
 import { MemberFormComponent } from './member-form/member-form.component';
 import {  MatFormFieldModule } from '@angular/material/form-field';
+import {  MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -29,6 +30,7 @@ import { AffectComponent } from './affect/affect.component';
 import { FirebaseModule } from './Firebase.module';
 import { LoginComponent } from './login/login.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -59,6 +61,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatInputModule,
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -73,7 +76,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     FirebaseModule,
     MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FlexLayoutModule
     
     
 

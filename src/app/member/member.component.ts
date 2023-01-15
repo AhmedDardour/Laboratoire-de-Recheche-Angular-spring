@@ -18,14 +18,16 @@ export class MemberComponent implements OnInit {
 
   constructor(private MemberService : MemberService , private dialog : MatDialog) // initialisation 
   { 
-    this.dataSource= new MatTableDataSource
-    ( this.MemberService.tab)
+    this.dataSource= new MatTableDataSource()
   }
 
   ngOnInit(): void { // initialize les attributes s'executes on initialization avant constructor
+
+    this.fetchDataSource();
+
   }
 
-  displayedColumns: any[] = ['id','cin','name','createdDate','cv','type','actions'];
+  displayedColumns: any[] = ['id','cin','name','email','createdDate','cv','type','actions'];
 
   fetchDataSource():void{
     this.MemberService.getAllMembers().then((tableau)=>{this.dataSource.data=tableau});

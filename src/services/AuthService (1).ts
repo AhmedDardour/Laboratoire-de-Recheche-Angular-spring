@@ -16,6 +16,10 @@ export class AuthService {
     }
 
 
+    public isLoggedIn(): boolean {
+        return !!this.afAuth.currentUser;
+      }
+
     getUserClaims(): Promise<any> {
         return new Promise<any>((resolve, reject) => {
             this.afAuth.onAuthStateChanged(user => {
@@ -58,11 +62,6 @@ export class AuthService {
     doGoogleLogin(): Promise<any> {
         return this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
     }
-
-    
-
-
-
 
 
     

@@ -15,7 +15,7 @@ import { MemberService } from 'src/services/member.service';
 })
 export class ArticlesComponent implements OnInit {
     
-    tab:Member[];
+    tab:Member[] = [];
     selected!:string;
     displayedColumns: string[] = ['idArticle', 'title', 'Annee', 'Auteur','icon'];
     dataSource : MatTableDataSource<Article>
@@ -27,8 +27,7 @@ export class ArticlesComponent implements OnInit {
       private activatedRoute: ActivatedRoute,
       private router : Router
     ) { 
-      this.dataSource = new MatTableDataSource(this.articleService.tab);
-      this.tab=this.memberService.tab;
+      this.dataSource = new MatTableDataSource();
 
     }
     

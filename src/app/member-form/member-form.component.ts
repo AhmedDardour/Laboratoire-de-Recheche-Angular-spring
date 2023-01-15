@@ -41,7 +41,9 @@ itemglobale!:Member;
   initForm(): void {
     this.form=new FormGroup({
       cin:  new FormControl(null, [Validators.required]),  //Validators.required c'est un champs requie 
-      name:  new FormControl(null, [Validators.required]),
+      nom:  new FormControl(null, [Validators.required]),
+      prenom:  new FormControl(null, [Validators.required]),
+      email:  new FormControl(null, [Validators.required]),
       cv:  new FormControl(null, [Validators.required]),
       type:  new FormControl(null, [Validators.required])
     
@@ -51,7 +53,9 @@ itemglobale!:Member;
   initForm1(item : Member): void {
     this.form=new FormGroup({
       cin:  new FormControl(item.cin, [Validators.required]),   //Validators.required c'est un champs requie 
-      name:  new FormControl(item.name, [Validators.required]),
+      nom:  new FormControl(item.nom, [Validators.required]),
+      prenom:  new FormControl(item.prenom, [Validators.required]),
+      email:  new FormControl(item.email, [Validators.required]),
       cv:  new FormControl(item.cv, [Validators.required]),
       type:  new FormControl(item.type, [Validators.required])
     
