@@ -1,18 +1,53 @@
-<p></p>
-<p>
-<a>Text </a>
-<input type="text" >
-</p>
 
-<mat-form-field appearance="fill">
-    <mat-label>Enter a date range</mat-label>
-    <mat-date-range-input [rangePicker]="picker">
-      <input matStartDate placeholder="Start date">
-      <input matEndDate placeholder="End date">
-    </mat-date-range-input>
-    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-date-range-picker #picker></mat-date-range-picker>
-  </mat-form-field>
-<p></p>
-<button mat-button color="accent">OK</button>
+
+<div class="create">
+  <button mat-raised-button color="primary" routerLink='/create-event' ><mat-icon >add</mat-icon>Create New Event</button>
+</div>
+<div fxLayoutAlign="center center" class="row-height">
+<input matInput (keyup)="applyFilter($event)" placeholder="filtre" #input>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> # </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="titre">
+    <th mat-header-cell *matHeaderCellDef> Titre </th>
+    <td mat-cell *matCellDef="let element"> {{element.titre}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="lieu">
+    <th mat-header-cell *matHeaderCellDef> Lieu </th>
+    <td mat-cell *matCellDef="let element"> {{element.lieu}} </td>
+  </ng-container>
+
+  
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> createdDate </th>
+    <td mat-cell *matCellDef="let element"> {{element.date | date : 'MMM d, y h:mm:ss a' }} </td>
+
+  </ng-container>
+
+  
+
+  
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>actions </th>
+      <td mat-cell *matCellDef="let element">
+        <button routerLink='{{element.id}}/edit'><mat-icon class="edit">edit</mat-icon> </button> 
+        <button (click)="Delete(element.id)"><mat-icon class="delete">delete</mat-icon></button> 
+      </td>
+    </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

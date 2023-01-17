@@ -24,6 +24,8 @@ loggedIn$ = this.loggedIn.asObservable();
     this.authservice.getUserClaims()
     .then(user => this.router.navigate(['dashboard']))
     .catch(error => this.router.navigate(['login']) )
+
+    
  
   }
 
@@ -38,5 +40,9 @@ loggedIn$ = this.loggedIn.asObservable();
     this.router.navigate(['/dashboard']);});
     
   }
+
+  
+
+
 
 }

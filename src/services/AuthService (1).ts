@@ -3,12 +3,14 @@ import {AngularFireAuth} from '@angular/fire/compat/auth';
 import firebase from 'firebase/app';
 
 import * as auth from 'firebase/auth';
+import { Subject } from 'rxjs';
+import { Member } from 'src/modals/Member';
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    public userClaims: any;
-  //  public userClaims$ = new Subject<any>();
+   // userClaims!: Member;
+    public userClaims$ = new Subject<Member>();
 
     constructor(
         public afAuth: AngularFireAuth,
@@ -20,7 +22,7 @@ export class AuthService {
         return !!this.afAuth.currentUser;
       }
 
-    getUserClaims(): Promise<any> {
+    getUserClaims(): Promise<Member> {
         return new Promise<any>((resolve, reject) => {
             this.afAuth.onAuthStateChanged(user => {
                 if (!!user) {
@@ -46,8 +48,8 @@ export class AuthService {
     }
 
     setUserClaims(user: any): void {
-        this.userClaims = user;
-    //    this.userClaims$.next(user);
+        
+        this.userClaims$.next(user);
     }
 
 

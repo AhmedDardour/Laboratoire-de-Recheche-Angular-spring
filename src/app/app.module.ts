@@ -23,7 +23,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ToolsComponent } from './tools/tools.component';
-import { EventsComponent } from './events/events.component';
+import {  EventsComponent } from './events/events.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { AffectComponent } from './affect/affect.component';
@@ -31,6 +31,8 @@ import { FirebaseModule } from './Firebase.module';
 import { LoginComponent } from './login/login.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ToolFormComponent } from './tool-form/tool-form.component';
+import { EventFormComponent } from './event-form/event-form.component';
 
 
 
@@ -49,6 +51,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     EventsComponent,
     AffectComponent,
     LoginComponent,
+    ToolsComponent,
+    ToolFormComponent,
+    EventFormComponent
   
     
 

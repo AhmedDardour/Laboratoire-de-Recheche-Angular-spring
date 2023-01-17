@@ -25,9 +25,9 @@
 <div class="create">
     <button mat-raised-button color="primary" routerLink='/create' ><mat-icon >add</mat-icon>Create New</button>
 </div>
-
-<input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-
+<div fxLayoutAlign="center center" class="row-height">
+<input matInput (keyup)="applyFilter($event)" placeholder="filtre" #input>
+</div>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
